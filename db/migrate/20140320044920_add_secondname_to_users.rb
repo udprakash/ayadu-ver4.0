@@ -1,0 +1,5 @@
+class AddSecondnameToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :secondname, :string
+  end
+end

@@ -1,0 +1,52 @@
+<%= link_to 'Back', pins_path %>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @pin.image.url(:large) %>
+      </div>
+      <div class="panel-body">
+        <p><strong><%= @pin.title %></strong> by
+        <strong><%= @pin.user.firstname if @pin.user %></strong></p>
+        <p><%= @pin.description %></p>
+         
+        <strong>Rental</strong></br>
+         Daily Rs:<strong><%= @pin.daily %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         Weekly Rs:<strong><%= @pin.weekly %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Monthly Rs:<strong> <%= @pin.monthly %></strong></br></br>
+        <p><%= link_to "Send Request","#" , class: "btn btn-primary btn-lg" %></p>
+
+
+        <% if @pin.user == current_user %>
+          <%= link_to edit_pin_path(@pin) do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        Edit
+      <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <!--testing purposes-->
+  <div class="col-md-4">
+
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @pin.user.avatar.url(:medium) %>
+      </div>
+      <div class="panel-body">
+        
+        <strong><%= @pin.user.firstname if @pin.user %></strong></p>
+        <p><%= @pin.user.about %></p>
+        
+         
+        
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>
