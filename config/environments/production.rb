@@ -78,7 +78,7 @@ Ayadu::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  config.action_mailer.default_url_options = { :host => 'http://ayadu-ver20.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'http://stark-garden-8127.herokuapp.com/' }
 
 #3
   config.assets.precompile += ['active_admin.css.scss']
@@ -98,7 +98,7 @@ Ayadu::Application.configure do
 #mandrill
 config.action_mailer.smtp_settings = {
   :address   => "smtp.mandrillapp.com",
-  :port      => 25,
+  :port      => 587,
   :user_name => ENV["ud@thetraces.com"],
   :password  => ENV["4KsT3OQ5FLyJlBHdByEr2w"]
 }
