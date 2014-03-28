@@ -99,7 +99,7 @@ Ayadu::Application.configure do
 config.action_mailer.smtp_settings = {
   :address   => "smtp.mandrillapp.com",
   :port      => 587,
-  :user_name => ENV["ud@thetraces.com"],
-  :password  => ENV["4KsT3OQ5FLyJlBHdByEr2w"]
+  :user_name => "ud@thetraces.com",
+  :password  => "4KsT3OQ5FLyJlBHdByEr2w"
 }
 end
