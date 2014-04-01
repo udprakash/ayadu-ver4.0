@@ -2,7 +2,7 @@ class Pin < ActiveRecord::Base
 
 	 #using this http://stackoverflow.com/questions/7713695/how-to-modify-a-record-before-saving-on-ruby-on-rails
   #to prevent friendly id from becoming case insensitive sourcehttp://stackoverflow.com/questions/12673549/how-to-make-friendly-id-case-insensitive/12674241#12674241
-  before_create :downcase_stuff
+  #before_create :downcase_stuff
 
 
      belongs_to :user
@@ -20,9 +20,9 @@ class Pin < ActiveRecord::Base
 		validates :weekly, numericality: true
 		validates :monthly, numericality: true
 		
-	private
-    def downcase_stuff
-      self.myfield.downcase!
-     end	
+	#private
+    #def downcase_stuff
+     # self.myfield.downcase!
+     #end	
 
 end

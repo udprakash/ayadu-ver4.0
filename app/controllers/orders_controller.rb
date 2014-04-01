@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    session[:return_to] ||= request.referer
+
   end
 
   # POST /orders
@@ -30,10 +30,11 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
 
-        UserMailer.welcome_email.deliver
-
         
-        format.html { redirect_to session.delete(:return_to), notice: 'Order was successfully created.' }
+      UserMailer.welcome_email.deliver
+        
+
+        format.html { redirect_to root_path, notice: 'Order was successfully created. We will get back to you shortly' }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
