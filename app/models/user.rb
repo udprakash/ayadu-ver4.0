@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates :street, presence: true
   validates :locality, presence: true
   validates :city, presence: true
-  validates :state, presence: true
+  
   validates :about, presence: true, length: { maximum: 500 }
   validates :avatar, presence: true
   

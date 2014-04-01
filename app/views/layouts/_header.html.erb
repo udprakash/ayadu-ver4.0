@@ -8,18 +8,41 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Ayadu</a>
+    <%= link_to "Ayadu", root_path, :class=> "navbar-brand"%>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
+
+      <!-- search form code begins-->
+
+        <form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+
+        <%= form_tag(pins_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Stuff", class: "form-control" %>
+        </div>
+        <%= submit_tag "Search", :class => "btn btn-default" %>
+        <% end %>
+        </form>
+
+
+        <!-- search form code ends-->
+
+      
+
+      
+
+
+
+
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
         <% if user_signed_in? %>
         <li>
             <%= link_to new_pin_path do %>
-              <span class="glyphicon glyphicon-plus"></span> New Pin
+              <span class="glyphicon glyphicon-plus"></span> Add Product
             <% end %>
           </li>
 

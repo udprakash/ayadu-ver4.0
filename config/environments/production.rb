@@ -100,6 +100,6 @@ config.action_mailer.smtp_settings = {
   :address   => "smtp.mandrillapp.com",
   :port      => 587,
   :user_name => "ud@thetraces.com",
-  :password  => "4KsT3OQ5FLyJlBHdByEr2w"
+  :password  => "4KsT3OQ5FLyJlBHdByEr2w"  
 }
 end

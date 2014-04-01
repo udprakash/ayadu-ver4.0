@@ -15,7 +15,7 @@
          Daily Rs:<strong><%= @pin.daily %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          Weekly Rs:<strong><%= @pin.weekly %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Monthly Rs:<strong> <%= @pin.monthly %></strong></br></br>
-        <p><%= link_to "Send Request","#" , class: "btn btn-primary btn-lg" %></p>
+        <p><%= link_to "Send Request",new_order_path , class: "btn btn-primary btn-lg" %></p>
 
 
         <% if @pin.user == current_user %>
@@ -23,6 +23,10 @@
         <span class="glyphicon glyphicon-edit"></span>
         Edit
       <% end %>
+      <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
         <% end %>
 
       </div>
