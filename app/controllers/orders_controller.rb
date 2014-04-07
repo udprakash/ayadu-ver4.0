@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
       if @order.save
 
         
-      #UserMailer.welcome_email.deliver
+      UserMailer.welcome_email.deliver
         
 
         format.html { redirect_to root_path, notice: 'Order was successfully created. We will get back to you shortly' }
