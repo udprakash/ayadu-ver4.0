@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
 
   has_many :pins
+  has_many :orders
+
   has_attached_file :avatar, :styles => { :medium => "300x300>", :middle => "200x200>", :thumb => "100x100>" }
 
   validates :firstname, presence: true, length: { maximum: 15 }

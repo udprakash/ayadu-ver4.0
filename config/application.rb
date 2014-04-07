@@ -23,6 +23,9 @@ module Ayadu
     #required for heroku from devise
     config.assets.initialize_on_precompile = false
 
+    #http://stackoverflow.com/questions/20361428/rails-i18n-validation-deprecation-warning
+    I18n.enforce_available_locales = true
+
     #added this line to solve the error that arose from active_admin gem which prevented inhertence form application controller
     config.app_generators.scaffold_controller = :scaffold_controller
 

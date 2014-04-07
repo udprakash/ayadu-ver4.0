@@ -4,7 +4,20 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+    
     @orders = Order.all
+    redirect_to(root_path) unless current_user.email == "ud@thetraces.com"
+
+    #solution http://stackoverflow.com/questions/6050670/preventing-other-signed-in-users-from-accessing-edit-page
+
+    #unless @Order.user.email == "ud@thetraces.com"
+      
+    
+      #flash[:notice] = "You don't have access to this page"
+      #redirect_to root_path
+      #redirect_to customers_path(session[:customer_id])
+      
+    #end
   end
 
   # GET /orders/1
@@ -14,7 +27,8 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+     @order = current_user.orders.build
+    
   end
 
   # GET /orders/1/edit
@@ -25,13 +39,14 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+     @order = current_user.orders.build(order_params)
+   
 
     respond_to do |format|
       if @order.save
 
         
-      UserMailer.welcome_email.deliver
+      #UserMailer.welcome_email.deliver
         
 
         format.html { redirect_to root_path, notice: 'Order was successfully created. We will get back to you shortly' }

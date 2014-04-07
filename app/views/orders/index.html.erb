@@ -5,6 +5,7 @@
     <tr>
       <th>Subject</th>
       <th>Content</th>
+      <th>Email</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,8 @@
       <tr>
         <td><%= order.subject %></td>
         <td><%= order.content %></td>
+        <td><%= order.user.email %></td>
+       
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -15,10 +15,10 @@
          Daily Rs:<strong><%= @pin.daily %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          Weekly Rs:<strong><%= @pin.weekly %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Monthly Rs:<strong> <%= @pin.monthly %></strong></br></br>
-        <p><%= link_to "Send Request",new_order_path , class: "btn btn-primary btn-lg" %></p>
 
 
-        <% if @pin.user == current_user %>
+
+        <% if current_user && @pin.user == current_user %>
           <%= link_to edit_pin_path(@pin) do %>
         <span class="glyphicon glyphicon-edit"></span>
         Edit
@@ -44,6 +44,18 @@
         
         <strong><%= @pin.user.firstname if @pin.user %></strong></p>
         <p><%= @pin.user.about %></p>
+
+
+        <%if user_signed_in?%>
+        <p><center><%= link_to "Send Request",new_order_path , class: "btn btn-primary btn-lg" %></center></p>
+        <%else%>
+        
+        <p><center>
+          <h2>To send request</h2>
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+        </center></p>
+        <%end%>
         
          
         
