@@ -23,16 +23,23 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    redirect_to(root_path) unless current_user.email == "ud@thetraces.com"
+    #@urldata = request.original_url
+    
+
   end
 
   # GET /orders/new
   def new
      @order = current_user.orders.build
+     
     
   end
 
   # GET /orders/1/edit
   def edit
+    redirect_to(root_path) unless current_user.email == "ud@thetraces.com"
+
 
   end
 
@@ -90,6 +97,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:subject, :content)
+      params.require(:order).permit(:subject, :content, :urldata)
     end
 end

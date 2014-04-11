@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.hidden_field :urldata, :value => request.referrer  %>
+  </div>
+
  <div class="form-group">
     <%= f.label :subject %><br>
     <%= f.text_field :subject, class: "form-control" %>
