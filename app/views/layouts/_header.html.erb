@@ -21,7 +21,7 @@
   <div class="form-group">
 
         <%= form_tag(pins_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Stuff", class: "form-control" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Here", class: "form-control" %>
         </div>
         <%= submit_tag "Search", :class => "btn btn-default" %>
         <% end %>
