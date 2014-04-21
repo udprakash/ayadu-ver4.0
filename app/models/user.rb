@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :middle => "200x200>", :thumb => "100x100>" }
 
-  validates :firstname, presence: true, length: { maximum: 15 }
-  validates :secondname, presence: true, length: { maximum: 15 }
+  validates :firstname, presence: true, length: { maximum: 30 }
+  validates :secondname, presence: true, length: { maximum: 30 }
   validates :phone, numericality: true
   validates :street, presence: true
   validates :locality, presence: true
