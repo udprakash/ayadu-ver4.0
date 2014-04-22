@@ -32,9 +32,8 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-     #@order = current_user.orders.build
-     #http://stackoverflow.com/questions/20846970/creation-working-locally-but-not-on-heroku-activerecordunknownattributeerror
-     
+     @order = current_user.orders.build
+
     
   end
 
