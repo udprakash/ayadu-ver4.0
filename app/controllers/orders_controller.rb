@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /orders
   # GET /orders.json
@@ -31,7 +32,8 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-     @order = current_user.orders.build
+     #@order = current_user.orders.build
+     #http://stackoverflow.com/questions/20846970/creation-working-locally-but-not-on-heroku-activerecordunknownattributeerror
      
     
   end
@@ -94,6 +96,8 @@ class OrdersController < ApplicationController
     def set_order
       @order = Order.find(params[:id])
     end
+
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
